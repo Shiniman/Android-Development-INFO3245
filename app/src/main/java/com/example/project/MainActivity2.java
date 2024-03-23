@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity2 extends AppCompatActivity {
 
+    // Java Attributes
     Button btnLogout, btnSwitchToA3;
     FirebaseAuth mAuth;
     FirebaseUser user;
@@ -23,13 +24,12 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
+        // Connecting Java attributes to xml attributes
         btnLogout = findViewById(R.id.btnLogout);
         btnSwitchToA3 = findViewById(R.id.btnSwitchToA3);
-
         txtUserDetails = findViewById(R.id.txtUserDetails);
 
         mAuth = FirebaseAuth.getInstance();
-
         user = mAuth.getCurrentUser();
 
         // if currentUser() is null load login screen
@@ -42,6 +42,7 @@ public class MainActivity2 extends AppCompatActivity {
             txtUserDetails.setText(user.getEmail());
         }
 
+        // LOGOUT BUTTON
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,10 +52,11 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
+        // SWITCH TO A3
         btnSwitchToA3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, MainActivity3.class);
+                Intent intent = new Intent(MainActivity2.this, ExpenseTracker.class);
                 startActivity(intent);
             }
         });

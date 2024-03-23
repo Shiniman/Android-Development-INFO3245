@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity3 extends AppCompatActivity {
+public class ExpenseTracker extends AppCompatActivity {
 
     Button btnSwitchToA4;
 
@@ -21,7 +21,7 @@ public class MainActivity3 extends AppCompatActivity {
         btnSwitchToA4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
+                Intent intent = new Intent(ExpenseTracker.this, MainActivity4.class);
                 startActivity(intent);
             }
         });

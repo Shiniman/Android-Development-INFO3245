@@ -21,7 +21,7 @@
             android:name=".MainActivity4"
             android:exported="false" />
         <activity
-            android:name=".MainActivity3"
+            android:name=".ExpenseTracker"
             android:exported="false" />
         <activity
             android:name=".MainActivity2"
