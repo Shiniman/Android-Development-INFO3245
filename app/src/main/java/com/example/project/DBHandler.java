@@ -88,10 +88,10 @@ public class DBHandler extends SQLiteOpenHelper {
             do {
                 // add data from cursor to array
                 addedFinanceModelArrayList.add(new FinanceModel(
-                     cursorEverything.getInt(1),
-                     cursorEverything.getString(4),
-                     cursorEverything.getString(2),
-                     cursorEverything.getString(3)));
+                     cursorEverything.getDouble(1), // Index of spent column
+                     cursorEverything.getString(2), // Index of description column
+                     cursorEverything.getString(3), // Index of category column
+                     cursorEverything.getString(4))); // Index of date column
             } while (cursorEverything.moveToNext());
             // moves cursor to next row
         }
