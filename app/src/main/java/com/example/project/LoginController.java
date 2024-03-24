@@ -14,13 +14,12 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginController extends AppCompatActivity {
 
     Button btnLogin, btnRegister;
     EditText txtEmail, txtPassword;
@@ -34,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
         // Check if user is signed in (non-null) and Update UI accordingly
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
+            Intent intent = new Intent(LoginController.this, DashboardController.class);
             startActivity(intent);
         }
     }
@@ -42,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.login_activity);
 
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);
@@ -73,11 +72,11 @@ public class LoginActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         // Empty Field if statements
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(LoginActivity.this, "Enter email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginController.this, "Enter email", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(LoginActivity.this, "Enter password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginController.this, "Enter password", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -87,13 +86,13 @@ public class LoginActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     // If sign in is success, then load dashboard activity with user's information
-                    Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, MainActivity2.class);
+                    Toast.makeText(LoginController.this, "Login Successful.", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginController.this, DashboardController.class);
                     startActivity(intent);
                 }
                 else {
                     // If sign in fails, display a message.
-                    Toast.makeText(LoginActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginController.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -103,11 +102,11 @@ public class LoginActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         // Empty Field if statements
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(LoginActivity.this, "Enter email", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginController.this, "Enter email", Toast.LENGTH_SHORT).show();
             return;
         }
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(LoginActivity.this, "Enter password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginController.this, "Enter password", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -117,10 +116,10 @@ public class LoginActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 if (task.isSuccessful()) {
                     // If sign in is success, then load dashboard activity with user's information
-                        Toast.makeText(LoginActivity.this, "Account Created", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginController.this, "Account Created", Toast.LENGTH_SHORT).show();
                     } else {
                         // If sign in fails, display a message.
-                        Toast.makeText(LoginActivity.this, "Registration failed.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginController.this, "Registration failed.", Toast.LENGTH_SHORT).show();
                     }
                 }
             });

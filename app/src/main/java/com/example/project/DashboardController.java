@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity2 extends AppCompatActivity {
+public class DashboardController extends AppCompatActivity {
 
     // Java Attributes
     Button btnLogout, btnSwitchToA3;
@@ -22,7 +22,7 @@ public class MainActivity2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.dashboard_activity);
 
         // Connecting Java attributes to xml attributes
         btnLogout = findViewById(R.id.btnLogout);
@@ -34,7 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         // if currentUser() is null load login screen
         if (user == null) {
-            Intent intent = new Intent(MainActivity2.this, LoginActivity.class);
+            Intent intent = new Intent(DashboardController.this, LoginController.class);
             startActivity(intent);
         }
         // debug to prove we logged in. This can be thrown in the dashboard under user details or some shit
@@ -47,7 +47,7 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(MainActivity2.this, LoginActivity.class);
+                Intent intent = new Intent(DashboardController.this, LoginController.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class MainActivity2 extends AppCompatActivity {
         btnSwitchToA3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity2.this, ExpenseTracker.class);
+                Intent intent = new Intent(DashboardController.this, ExpenseTracker.class);
                 startActivity(intent);
             }
         });

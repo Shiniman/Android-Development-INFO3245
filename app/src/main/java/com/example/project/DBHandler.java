@@ -40,19 +40,18 @@ public class DBHandler extends SQLiteOpenHelper {
         // setting our column names
         // along with their data types.
         String query = "CREATE TABLE " + TABLE_NAME + " ("
-                + ID_COL + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-                + SPENT_COL + " INTEGER,"
+                + ID_COL + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + SPENT_COL + " DECIMAL(10,2),"
                 + DESCRIPTION_COL + " TEXT,"
                 + CATEGORY_COL + " TEXT,"
                 + DATE_COL + " TEXT)";
-
         // at last we are calling a exec sql
         // method to execute above sql query
         db.execSQL(query);
     }
 
     // method adds new finance records to the db
-    public void addNewFinanceRecord(int spent, String description, String category, String date)
+    public void addNewFinanceRecord(double spent, String description, String category, String date)
     {
         // sqlite variable which calls writable method to write data to the db
         SQLiteDatabase db = this.getWritableDatabase();

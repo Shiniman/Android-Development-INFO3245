@@ -3,16 +3,16 @@ package com.example.project;
 public class FinanceModel {
 
     // variables for our finance table
-    private int spent;
+    private double spent;
     private String description;
     private String category;
     private String date;
     private int id;
 
     // creating getter and setter methods
-    public int getSpentAmount() { return spent; }
+    public double getSpentAmount() { return spent; }
 
-    public void setSpentAmount(int spent) {
+    public void setSpentAmount(double spent) {
         this.spent = spent;
     }
 
@@ -39,7 +39,7 @@ public class FinanceModel {
     public void setId(int id) { this.id = id; }
 
     // constructor
-    public FinanceModel(int spent,
+    public FinanceModel(double spent,
                         String description,
                         String category,
                         String date)
