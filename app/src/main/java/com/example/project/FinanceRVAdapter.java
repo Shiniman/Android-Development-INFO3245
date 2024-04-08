@@ -67,26 +67,4 @@ public class FinanceRVAdapter extends RecyclerView.Adapter<FinanceRVAdapter.View
         // returning size of array list
         return financeModelArrayList.size();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
