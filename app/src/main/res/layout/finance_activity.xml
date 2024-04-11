@@ -4,16 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F5F5F5"
     tools:context=".ExpenseTracker">
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Finance Input"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/edtAmountSpent"
@@ -35,15 +46,11 @@
             android:inputType="text"
             android:textSize="14sp" />
 
-        <EditText
-            android:id="@+id/edtCategory"
+        <Spinner
+            android:id="@+id/spnrCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:ems="10"
-            android:hint="category"
-            android:inputType="text"
-            android:textSize="14sp" />
+            android:layout_gravity="center" />
 
         <EditText
             android:id="@+id/edtDate"
@@ -51,30 +58,30 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:ems="10"
-            android:hint="date: YYYY-MM-DD"
+            android:hint="YYYY-MM-DD"
             android:inputType="text"
             android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnDatePicker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Select Date" />
 
         <Button
             android:id="@+id/btnAddRecord"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Add Finacial Record" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Activity 3 - Finance Input Activity" />
+            android:text="Add Financial Record" />
 
         <Button
-            android:id="@+id/btnSwitchToA4"
+            android:id="@+id/btnFinanceToHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Switch To Activity 4" />
+            android:text="Home" />
 
         <Button
             android:id="@+id/btnRefreshCV"
