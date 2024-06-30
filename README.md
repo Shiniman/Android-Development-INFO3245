@@ -1,2 +1,2 @@
-https://www.youtube.com/watch?v=GhfJTOu3_SE <-- LINK EXPLAINS HOW I UPLOADED TO GITHUB!
-https://www.youtube.com/watch?v=QAKq8UBv4GI <-- LINK EXPLAINS HOW I CONNECTED A FIREBASE DB AUTHENTICATION THINGY USING ANDROID STUDIO AND GOOGLE
+A solo android app project done for a university course.
+https://www.youtube.com/watch?v=QAKq8UBv4GI - Explanaion on Firebase Database Authentication integration for Android Studio 2024
